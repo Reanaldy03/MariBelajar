@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Kursus - MariBelajar</title>
+    <meta name="description" content="Formulir pendaftaran dan pembayaran kursus di MariBelajar">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/maribelajar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: #f7f9fb;
+        }
+        
+        .enroll-hero {
+            background: linear-gradient(135deg, #1976f6 0%, #4f8cff 100%);
+            color: white;
+            padding: 80px 0 40px;
+        }
+        
+        .enroll-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+            padding: 32px;
+        }
+        
+        .summary-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        }
+        
+        .payment-method {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .payment-option {
+            flex: 1 1 0;
+            min-width: 150px;
+            border: 2px solid #e0e6ed;
+            border-radius: 12px;
+            padding: 18px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: #fff;
+            position: relative;
+            font-size: 1.1rem;
+            font-weight: 500;
+            user-select: none;
+        }
+        
+        .payment-option.selected {
+            border-color: #1976f6;
+            box-shadow: 0 2px 12px rgba(25, 118, 246, 0.08);
+            background: #f3f8ff;
+        }
+        
+        .payment-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .payment-option i {
+            font-size: 1.5rem;
+            color: #1976f6;
+            min-width: 28px;
+            text-align: center;
+        }
+        
+        .form-label {
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-graduation-cap text-primary me-2"></i>
+                MariBelajar
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="courses.html">
+                            <i class="fas fa-book me-1"></i>Kursus
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>Tentang
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Kontak
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="login.html" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-sign-in-alt me-1"></i>Masuk
+                    </a>
+                    <a href="register.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus me-1"></i>Daftar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="enroll-hero mb-5">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-2">Pendaftaran Kursus</h1>
+            <p class="lead mb-0">Lengkapi data diri dan lakukan pembayaran untuk mengikuti kursus pilihan Anda.</p>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Ringkasan Kursus -->
+                <div class="col-lg-5">
+                    <div class="enroll-card mb-4 mb-lg-0">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img id="courseImage" src="" alt="Gambar Kursus" class="summary-img">
+                            <div>
+                                <span class="badge bg-primary mb-2" id="courseCategory">Kategori</span>
+                                <h4 class="mb-1" id="courseTitle">Judul Kursus</h4>
+                                <div class="small text-muted mb-1"><i class="fas fa-user me-1"></i><span id="courseInstructor">Instruktur</span></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><i class="fas fa-clock me-1"></i> <span id="courseDuration">Durasi</span> &nbsp; <i class="fas fa-signal me-1"></i> <span id="courseLevel">Level</span></div>
+                        <div class="mb-2"><i class="fas fa-users me-1"></i> <span id="courseStudents">0</span> siswa</div>
+                        <div class="mb-2"><i class="fas fa-star text-warning me-1"></i> <span id="courseRating">0</span></div>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">Total Harga:</span>
+                            <span class="fs-4 text-primary fw-bold" id="coursePrice">Rp 0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Formulir Pendaftaran -->
+                <div class="col-lg-7">
+                    <div class="enroll-card">
+                        <form id="enrollForm" autocomplete="off">
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nama" name="nama" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nohp" class="form-label">No. HP / WhatsApp</label>
+                                <input type="tel" class="form-control" id="nohp" name="nohp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="alamat" class="form-label">Alamat Lengkap</label>
+                                <textarea class="form-control" id="alamat" name="alamat" rows="2" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Metode Pembayaran</label>
+                                <div class="payment-method">
+                                    <label class="payment-option" id="opt-bank">
+                                        <input class="form-check-input" type="radio" name="metode" id="bank" value="Transfer Bank" required>
+                                        <i class="fas fa-university"></i> Transfer Bank
+                                    </label>
+                                    <label class="payment-option" id="opt-ewallet">
+                                        <input class="form-check-input" type="radio" name="metode" id="ewallet" value="E-Wallet" required>
+                                        <i class="fas fa-wallet"></i> E-Wallet
+                                    </label>
+                                    <label class="payment-option" id="opt-qris">
+                                        <input class="form-check-input" type="radio" name="metode" id="qris" value="QRIS" required>
+                                        <i class="fas fa-qrcode"></i> QRIS
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-grid mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg">Daftar & Bayar</button>
+                            </div>
+                        </form>
+                        <div id="enrollSuccess" class="alert alert-success mt-4 d-none" role="alert">
+                            <i class="fas fa-check-circle me-2"></i> Pendaftaran berhasil! Silakan cek email Anda untuk detail pembayaran.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>MariBelajar</h5>
+                    <p class="text-muted">Platform e-learning terdepan yang membantu Anda mencapai impian melalui pembelajaran berkualitas.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Kursus</h5>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Perusahaan</h5>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Dukungan</h5>
+                    <ul>
+                        <li><a href="contact.html">Kontak</a></li>
+                        <li><a href="#">Bantuan</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom mt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                        <p class="mb-0">&copy; 2024 MariBelajar. Semua hak dilindungi.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end text-center">
+                        <p class="mb-0">Dibuat dengan <i class="fas fa-heart text-danger"></i> untuk pendidikan Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/courses-data.js"></script>
+    <script>
+        // Ambil parameter ID kursus dari URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        function formatPrice(price) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(price);
+        }
+
+        function formatRating(rating) {
+            return rating.toFixed(1);
+        }
+        // Tampilkan data kursus
+        function loadCourseSummary() {
+            const courseId = getUrlParameter('course');
+            const course = getCourseById(courseId);
+            if (!course) {
+                window.location.href = 'courses.html';
+                return;
+            }
+            document.title = `Daftar ${course.title} - MariBelajar`;
+            document.getElementById('courseImage').src = course.image;
+            document.getElementById('courseImage').alt = course.title;
+            document.getElementById('courseCategory').textContent = course.categoryLabel;
+            document.getElementById('courseTitle').textContent = course.title;
+            document.getElementById('courseInstructor').textContent = course.instructor;
+            document.getElementById('courseDuration').textContent = course.duration;
+            document.getElementById('courseLevel').textContent = course.level;
+            document.getElementById('courseStudents').textContent = course.students.toLocaleString('id-ID');
+            document.getElementById('courseRating').textContent = formatRating(course.rating);
+            document.getElementById('coursePrice').textContent = formatPrice(course.price);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCourseSummary();
+            // Highlight card saat dipilih
+            const paymentOptions = document.querySelectorAll('.payment-option');
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    this.querySelector('input[type="radio"]').checked = true;
+                });
+            });
+            document.getElementById('enrollForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                document.getElementById('enrollSuccess').classList.remove('d-none');
+                document.getElementById('enrollForm').reset();
+                paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            // Update tombol kembali ke pelajaran
+            const courseId = getUrlParameter('course');
+            if (courseId) {
+                document.getElementById('backToLessons').href = `lessons.html?course=${courseId}&week=1`;
+            }
+        });
+    </script>
+</body>
+
+</html>

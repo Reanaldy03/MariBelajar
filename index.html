@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MariBelajar - Platform E-Learning Terdepan</title>
+    <meta name="description" content="Platform e-learning terdepan dengan ribuan kursus berkualitas untuk semua level pembelajaran">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="bootstrap/css/maribelajar.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-graduation-cap text-primary me-2"></i>
+                MariBelajar
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home me-1"></i>Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">
+                            <i class="fas fa-book me-1"></i>Kursus
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>Tentang
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Kontak
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="login.html" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-sign-in-alt me-1"></i>Masuk
+                    </a>
+                    <a href="register.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus me-1"></i>Daftar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Belajar Lebih Mudah dengan MariBelajar</h1>
+                    <p class="lead mb-4">Platform e-learning terdepan dengan ribuan kursus berkualitas dari instruktur berpengalaman. Mulai perjalanan belajar Anda hari ini!</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="courses.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-play me-2"></i>Mulai Belajar
+                        </a>
+                        <a href="about.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-info-circle me-2"></i>Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/kursus.jpg" alt="E-Learning Platform" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number" data-value="10000">0</span>
+                        <div class="stat-label">Kursus Tersedia</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number" data-value="50000">0</span>
+                        <div class="stat-label">Siswa Aktif</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number" data-value="200">0</span>
+                        <div class="stat-label">Instruktur Ahli</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number" data-value="95">0</span>
+                        <div class="stat-label">% Kepuasan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Mengapa Memilih MariBelajar?</h2>
+                    <p class="lead text-muted">Platform pembelajaran online yang dirancang untuk memberikan pengalaman belajar terbaik</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Belajar Fleksibel</h4>
+                            <p class="card-text text-muted">Akses kursus kapan saja dan di mana saja. Belajar sesuai dengan jadwal Anda sendiri.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Sertifikat Resmi</h4>
+                            <p class="card-text text-muted">Dapatkan sertifikat resmi setelah menyelesaikan kursus untuk meningkatkan CV Anda.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Komunitas Aktif</h4>
+                            <p class="card-text text-muted">Bergabung dengan komunitas pembelajar aktif dan berbagi pengalaman bersama.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Kursus Populer</h2>
+                    <p class="lead text-muted">Pilih dari ribuan kursus berkualitas tinggi yang telah dirancang oleh para ahli</p>
+                </div>
+            </div>
+            
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <div class="card course-card h-100 w-100" data-href="course-detail.html">
+                        <img src="images/HTML & CSS Dasar.png" class="card-img-top object-fit-cover" alt="Web Development" style="height:200px;object-fit:cover;">
+                        <div class="card-body d-flex flex-column">
+                            <span class="course-badge">Web Development</span>
+                            <h5 class="card-title mt-2">HTML & CSS Dasar</h5>
+                            <p class="card-text text-muted flex-grow-1">Pelajari dasar-dasar HTML dan CSS untuk membangun website yang menarik.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="text-primary fw-bold">Rp 199.000</span>
+                                <a href="enroll.html?course=html-css" class="btn btn-sm btn-primary">Daftar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <div class="card course-card h-100 w-100" data-href="course-detail.html">
+                        <img src="images/JavaScript Modern.jpg" class="card-img-top object-fit-cover" alt="JavaScript" style="height:200px;object-fit:cover;">
+                        <div class="card-body d-flex flex-column">
+                            <span class="course-badge">Programming</span>
+                            <h5 class="card-title mt-2">JavaScript Modern</h5>
+                            <p class="card-text text-muted flex-grow-1">Kuasai JavaScript modern dengan ES6+ dan framework populer.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="text-primary fw-bold">Rp 299.000</span>
+                                <a href="enroll.html?course=javascript" class="btn btn-sm btn-primary">Daftar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <div class="card course-card h-100 w-100" data-href="course-detail.html">
+                        <img src="images/UI UX Design.jpg" class="card-img-top object-fit-cover" alt="UI/UX Design" style="height:200px;object-fit:cover;">
+                        <div class="card-body d-flex flex-column">
+                            <span class="course-badge">Design</span>
+                            <h5 class="card-title mt-2">UI/UX Design</h5>
+                            <p class="card-text text-muted flex-grow-1">Pelajari prinsip desain UI/UX untuk menciptakan pengalaman pengguna yang luar biasa.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="text-primary fw-bold">Rp 399.000</span>
+                                <a href="enroll.html?course=uiux" class="btn btn-sm btn-primary">Daftar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <div class="card course-card h-100 w-100" data-href="course-detail.html">
+                        <img src="images/Digital Marketing.jpg" class="card-img-top object-fit-cover" alt="Digital Marketing" style="height:200px;object-fit:cover;">
+                        <div class="card-body d-flex flex-column">
+                            <span class="course-badge">Business</span>
+                            <h5 class="card-title mt-2">Digital Marketing</h5>
+                            <p class="card-text text-muted flex-grow-1">Strategi pemasaran digital yang efektif untuk bisnis modern.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="text-primary fw-bold">Rp 249.000</span>
+                                <a href="enroll.html?course=digital-marketing" class="btn btn-sm btn-primary">Daftar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="courses.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-th-large me-2"></i>Lihat Semua Kursus
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Apa Kata Mereka</h2>
+                    <p class="lead text-muted">Testimoni dari ribuan siswa yang telah merasakan manfaat MariBelajar</p>
+                </div>
+            </div>
+            
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <img src="images/Sarah Johnson.jpg" alt="Testimonial" class="testimonial-avatar">
+                                    <h5 class="mb-2">Sarah Johnson</h5>
+                                    <p class="text-muted mb-3">Web Developer</p>
+                                    <p class="mb-0">"MariBelajar telah membantu saya menguasai web development dari nol. Instruktur sangat berpengalaman dan materi yang disajikan sangat mudah dipahami."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <img src="images/Ahmad Rahman.jpg" alt="Testimonial" class="testimonial-avatar">
+                                    <h5 class="mb-2">Ahmad Rahman</h5>
+                                    <p class="text-muted mb-3">UI/UX Designer</p>
+                                    <p class="mb-0">"Platform yang sangat user-friendly dan kursus yang berkualitas tinggi. Saya berhasil mendapatkan pekerjaan impian berkat MariBelajar."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <img src="images/Lisa Chen.jpg" alt="Testimonial" class="testimonial-avatar">
+                                    <h5 class="mb-2">Lisa Chen</h5>
+                                    <p class="text-muted mb-3">Digital Marketer</p>
+                                    <p class="mb-0">"Fleksibilitas belajar yang ditawarkan MariBelajar sangat membantu saya yang sibuk bekerja. Materi selalu up-to-date dengan tren terbaru."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold text-white mb-4">Siap Memulai Perjalanan Belajar Anda?</h2>
+                    <p class="lead text-white-50 mb-4">Bergabunglah dengan ribuan pembelajar yang telah merasakan manfaat MariBelajar</p>
+                    <a href="register.html" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-user-plus me-2"></i>Daftar Gratis
+                    </a>
+                    <a href="courses.html" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-play me-2"></i>Jelajahi Kursus
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>MariBelajar</h5>
+                    <p class="text-muted">Platform e-learning terdepan yang membantu Anda mencapai impian melalui pembelajaran berkualitas.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Kursus</h5>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Perusahaan</h5>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Dukungan</h5>
+                    <ul>
+                        <li><a href="contact.html">Kontak</a></li>
+                        <li><a href="#">Bantuan</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom mt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                        <p class="mb-0">&copy; 2024 MariBelajar. Semua hak dilindungi.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end text-center">
+                        <p class="mb-0">Dibuat dengan <i class="fas fa-heart text-danger"></i> untuk pendidikan Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="bootstrap/js/maribelajar.js"></script>
+</body>
+</html>

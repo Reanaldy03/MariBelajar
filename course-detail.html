@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Kursus - MariBelajar</title>
+    <meta name="description" content="Detail lengkap kursus di MariBelajar">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="bootstrap/css/maribelajar.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .course-hero {
+            background: linear-gradient(135deg, #1976f6 0%, #4f8cff 100%);
+            color: white;
+            padding: 120px 0 80px;
+        }
+        
+        .course-image {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-stats {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .curriculum-item {
+            border-left: 3px solid #667eea;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .requirement-item,
+        .outcome-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .instructor-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .price-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 100px;
+        }
+        
+        .rating-stars i {
+            color: #ffc107;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+        
+        .rating-stars .star-empty {
+            color: #e4e5e9;
+        }
+        
+        .instructor-card img#instructorPhoto {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #f3f3f3;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .course-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-graduation-cap text-primary me-2"></i>
+                MariBelajar
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="courses.html">
+                            <i class="fas fa-book me-1"></i>Kursus
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>Tentang
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Kontak
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="login.html" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-sign-in-alt me-1"></i>Masuk
+                    </a>
+                    <a href="register.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus me-1"></i>Daftar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Beranda</a></li>
+                            <li class="breadcrumb-item"><a href="courses.html" class="text-white-50">Kursus</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page" id="courseTitle">Detail Kursus</li>
+                        </ol>
+                    </nav>
+                    <span class="course-badge mb-3 d-inline-block" id="courseCategory">Kategori</span>
+                    <h1 class="display-4 fw-bold mb-3" id="courseTitleMain">Judul Kursus</h1>
+                    <p class="lead mb-4" id="courseDescription">Deskripsi kursus akan ditampilkan di sini.</p>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <i class="fas fa-user-tie fa-2x mb-2"></i>
+                                <p class="mb-0 fw-bold" id="courseInstructor">Instruktur</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <i class="fas fa-clock fa-2x mb-2"></i>
+                                <p class="mb-0 fw-bold" id="courseDuration">Durasi</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <i class="fas fa-signal fa-2x mb-2"></i>
+                                <p class="mb-0 fw-bold" id="courseLevel">Level</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <i class="fas fa-star fa-2x mb-2 rating-stars"></i>
+                                <p class="mb-0 fw-bold" id="courseRating">Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img src="" alt="Course Image" class="img-fluid course-image" id="courseImage">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <!-- Course Overview -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-info-circle text-primary me-2"></i> Tentang Kursus Ini
+                            </h3>
+                            <div id="courseLongDescription">
+                                <!-- Long description will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Curriculum -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-list-ul text-primary me-2"></i> Kurikulum Kursus
+                            </h3>
+                            <div id="courseCurriculum">
+                                <!-- Curriculum will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Requirements -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-clipboard-check text-primary me-2"></i> Persyaratan
+                            </h3>
+                            <div id="courseRequirements">
+                                <!-- Requirements will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Learning Outcomes -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-target text-primary me-2"></i> Yang Akan Anda Pelajari
+                            </h3>
+                            <div id="courseOutcomes">
+                                <!-- Outcomes will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructor -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">
+                                <i class="fas fa-chalkboard-teacher text-primary me-2"></i> Tentang Instruktur
+                            </h3>
+                            <div class="instructor-card d-flex align-items-center gap-4 flex-wrap flex-md-nowrap">
+                                <div class="text-center flex-shrink-0">
+                                    <img id="instructorPhoto" src="images/user-default.png" alt="Foto Instruktur" class="rounded-circle mb-3" style="width:120px;height:120px;object-fit:cover;background:#1976f6;">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-2" id="instructorName">Nama Instruktur</h5>
+                                    <p class="text-muted mb-3">Instruktur berpengalaman dengan keahlian di bidang teknologi dan pendidikan.</p>
+                                    <div class="d-flex gap-3 flex-wrap">
+                                        <span class="badge bg-primary fs-6"><i class="fas fa-users me-1"></i> <span id="instructorStudents">0</span> Siswa</span>
+                                        <span class="badge bg-success fs-6"><i class="fas fa-star me-1"></i> <span id="instructorRating">0</span> Rating</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Price Card -->
+                    <div class="price-card mb-4">
+                        <div class="text-center mb-4">
+                            <h2 class="text-primary fw-bold" id="coursePrice">Rp 0</h2>
+                            <p class="text-muted">Harga Sekali Bayar</p>
+                        </div>
+
+                        <div class="course-stats mb-4">
+                            <div class="row text-center align-items-center">
+                                <div class="col-6">
+                                    <h5 class="fw-bold text-primary" id="courseStudents">0</h5>
+                                    <small class="text-muted">Siswa Terdaftar</small>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="fw-bold text-primary d-inline-block align-middle" id="courseRatingNumber">0</h5>
+                                    <span class="d-inline-block align-middle rating-stars" id="courseRatingStars"></span>
+                                    <br><small class="text-muted">Rating</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-primary btn-lg" id="enrollButton">
+                                <i class="fas fa-graduation-cap me-2"></i> Daftar Sekarang
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary" id="backToLessonsBtn">
+                                <i class="fas fa-arrow-left me-2"></i> Kembali ke Pelajaran
+                            </a>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="text-center">
+                            <h6 class="fw-bold mb-3">Yang Anda Dapatkan:</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i> Akses Seumur Hidup
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i> Sertifikat Penyelesaian
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i> Akses ke Forum Diskusi
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i> Dukungan Instruktur
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i> Update Materi Gratis
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>MariBelajar</h5>
+                    <p class="text-muted">Platform e-learning terdepan yang membantu Anda mencapai impian melalui pembelajaran berkualitas.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Kursus</h5>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Perusahaan</h5>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Dukungan</h5>
+                    <ul>
+                        <li><a href="contact.html">Kontak</a></li>
+                        <li><a href="#">Bantuan</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom mt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                        <p class="mb-0">&copy; 2024 MariBelajar. Semua hak dilindungi.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end text-center">
+                        <p class="mb-0">Dibuat dengan <i class="fas fa-heart text-danger"></i> untuk pendidikan Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Courses Data -->
+    <script src="js/courses-data.js"></script>
+
+    <script>
+        // Fungsi untuk mendapatkan parameter dari URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Fungsi untuk memformat harga
+        function formatPrice(price) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(price);
+        }
+
+        // Fungsi untuk memformat rating
+        function formatRating(rating) {
+            return rating.toFixed(1);
+        }
+
+        // Fungsi untuk menampilkan stars
+        function displayStars(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            let stars = '';
+
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="fas fa-star"></i>';
+            }
+
+            if (hasHalfStar) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            }
+
+            const emptyStars = 5 - Math.ceil(rating);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="fas fa-star star-empty"></i>';
+            }
+
+            return stars;
+        }
+
+        // Fungsi untuk memuat detail kursus
+        function loadCourseDetail() {
+            const courseId = getUrlParameter('id');
+
+            if (!courseId) {
+                // Redirect ke halaman kursus jika tidak ada ID
+                window.location.href = 'courses.html';
+                return;
+            }
+
+            const course = getCourseById(courseId);
+
+            if (!course) {
+                // Redirect ke halaman kursus jika kursus tidak ditemukan
+                window.location.href = 'courses.html';
+                return;
+            }
+
+            // Update title dan meta
+            document.title = `${course.title} - MariBelajar`;
+
+            // Update breadcrumb dan header
+            document.getElementById('courseTitle').textContent = course.title;
+            document.getElementById('courseTitleMain').textContent = course.title;
+            document.getElementById('courseCategory').textContent = course.categoryLabel;
+            document.getElementById('courseDescription').textContent = course.description;
+
+            // Update course image
+            document.getElementById('courseImage').src = course.image;
+            document.getElementById('courseImage').alt = course.title;
+
+            // Update course stats
+            document.getElementById('courseInstructor').textContent = course.instructor;
+            document.getElementById('courseDuration').textContent = course.duration;
+            document.getElementById('courseLevel').textContent = course.level;
+            document.getElementById('courseRating').innerHTML = `${formatRating(course.rating)} ${displayStars(course.rating)}`;
+
+            // Update price card
+            document.getElementById('coursePrice').textContent = formatPrice(course.price);
+            document.getElementById('courseStudents').textContent = course.students.toLocaleString('id-ID');
+            document.getElementById('courseRatingNumber').textContent = formatRating(course.rating);
+            document.getElementById('courseRatingStars').innerHTML = displayStars(course.rating);
+
+            // Update instructor info
+            document.getElementById('instructorName').textContent = course.instructor;
+            document.getElementById('instructorStudents').textContent = course.students.toLocaleString('id-ID');
+            document.getElementById('instructorRating').textContent = formatRating(course.rating);
+            document.getElementById('instructorPhoto').src = course.instructorPhoto;
+            document.getElementById('instructorPhoto').alt = course.instructor;
+
+            // Update enroll button
+            document.getElementById('enrollButton').href = `enroll.html?course=${course.id}`;
+
+            // Update long description
+            document.getElementById('courseLongDescription').innerHTML = course.longDescription;
+
+            // Update curriculum
+            let curriculumHTML = '';
+            course.curriculum.forEach(week => {
+                        curriculumHTML += `
+                    <div class="curriculum-item">
+                        <h5 class="fw-bold mb-3">Minggu ${week.week}: ${week.title}</h5>
+                        <ul class="list-unstyled">
+                            ${week.topics.map(topic => `<li><i class="fas fa-check text-success me-2"></i>${topic}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            });
+            document.getElementById('courseCurriculum').innerHTML = curriculumHTML;
+            
+            // Update requirements
+            let requirementsHTML = '';
+            course.requirements.forEach(req => {
+                requirementsHTML += `
+                    <div class="requirement-item">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        ${req}
+                    </div>
+                `;
+            });
+            document.getElementById('courseRequirements').innerHTML = requirementsHTML;
+            
+            // Update outcomes
+            let outcomesHTML = '';
+            course.outcomes.forEach(outcome => {
+                outcomesHTML += `
+                    <div class="outcome-item">
+                        <i class="fas fa-target text-primary me-2"></i>
+                        ${outcome}
+                    </div>
+                `;
+            });
+            document.getElementById('courseOutcomes').innerHTML = outcomesHTML;
+
+            // Update tombol kembali ke pelajaran
+            document.getElementById('backToLessonsBtn').href = `lessons.html?course=${courseId}&week=1`;
+        }
+
+        // Load course detail when page loads
+        document.addEventListener('DOMContentLoaded', loadCourseDetail);
+    </script>
+</body>
+
+</html>

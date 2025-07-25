@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - MariBelajar</title>
+    <meta name="description" content="Masuk ke akun MariBelajar Anda untuk mengakses kursus dan fitur lainnya">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="bootstrap/css/maribelajar.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-graduation-cap text-primary me-2"></i>
+                MariBelajar
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">
+                            <i class="fas fa-book me-1"></i>Kursus
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>Tentang
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Kontak
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="register.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus me-1"></i>Daftar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="py-5" style="margin-top: 76px; min-height: calc(100vh - 76px);">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-header text-center py-4" style="background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));">
+                            <h2 class="text-white mb-0">
+                                <i class="fas fa-sign-in-alt me-2"></i>Masuk ke MariBelajar
+                            </h2>
+                        </div>
+                        <div class="card-body p-5">
+                            <form class="needs-validation" novalidate>
+                                <div class="mb-4">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email Anda" required>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Masukkan alamat email yang valid.
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="password" class="form-label">Password *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password Anda" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Password wajib diisi.
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">
+                                                Ingat saya
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <a href="#" class="text-decoration-none">Lupa password?</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-grid mb-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-sign-in-alt me-2"></i>Masuk
+                                    </button>
+                                </div>
+                                
+                                <div class="social-divider">
+                                    <span>Atau masuk dengan</span>
+                                </div>
+                                
+                                <div class="row g-2 mb-4 social-login-section">
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-google social-btn w-100 d-flex align-items-center justify-content-center py-2">
+                                            <i class="fab fa-google me-2 fs-5"></i>
+                                            <span class="fw-semibold">Google</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-facebook social-btn w-100 d-flex align-items-center justify-content-center py-2">
+                                            <i class="fab fa-facebook-f me-2 fs-5"></i>
+                                            <span class="fw-semibold">Facebook</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-twitter social-btn w-100 d-flex align-items-center justify-content-center py-2">
+                                            <i class="fab fa-twitter me-2 fs-5"></i>
+                                            <span class="fw-semibold">Twitter</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-github social-btn w-100 d-flex align-items-center justify-content-center py-2">
+                                            <i class="fab fa-github me-2 fs-5"></i>
+                                            <span class="fw-semibold">GitHub</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <p class="mb-0">
+                                        Belum punya akun? 
+                                        <a href="register.html" class="text-decoration-none fw-bold">Daftar sekarang</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Mengapa Memilih MariBelajar?</h2>
+                    <p class="lead text-muted">Platform pembelajaran online yang dirancang untuk memberikan pengalaman belajar terbaik</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Belajar Fleksibel</h4>
+                            <p class="card-text text-muted">Akses kursus kapan saja dan di mana saja. Belajar sesuai dengan jadwal Anda sendiri.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Sertifikat Resmi</h4>
+                            <p class="card-text text-muted">Dapatkan sertifikat resmi setelah menyelesaikan kursus untuk meningkatkan CV Anda.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="card-title mb-3">Komunitas Aktif</h4>
+                            <p class="card-text text-muted">Bergabung dengan komunitas pembelajar aktif dan berbagi pengalaman bersama.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>MariBelajar</h5>
+                    <p class="text-muted">Platform e-learning terdepan yang membantu Anda mencapai impian melalui pembelajaran berkualitas.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Kursus</h5>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Perusahaan</h5>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Dukungan</h5>
+                    <ul>
+                        <li><a href="contact.html">Kontak</a></li>
+                        <li><a href="#">Bantuan</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom mt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                        <p class="mb-0">&copy; 2024 MariBelajar. Semua hak dilindungi.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end text-center">
+                        <p class="mb-0">Dibuat dengan <i class="fas fa-heart text-danger"></i> untuk pendidikan Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="bootstrap/js/maribelajar.js"></script>
+    
+    <!-- Login Specific JS -->
+    <script>
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                password.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            if (!email || !password) {
+                MariBelajar.showToast('Mohon isi semua field yang diperlukan', 'warning');
+                return;
+            }
+            
+            // Simulate login process
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            const hideLoading = MariBelajar.showLoading(button);
+            
+            setTimeout(() => {
+                hideLoading();
+                MariBelajar.showToast('Login berhasil! Mengalihkan ke dashboard...', 'success');
+                
+                // Redirect to dashboard (simulate)
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* Custom styles for social media icons */
+.social-btn {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn i {
+    transition: transform 0.3s ease;
+}
+
+.social-btn:hover i {
+    transform: scale(1.1);
+}
+
+/* Google button */
+.btn-outline-danger.social-btn:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+/* Facebook button */
+.btn-outline-primary.social-btn:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+/* Twitter button */
+.btn-outline-info.social-btn:hover {
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+    color: white;
+}
+
+/* GitHub button */
+.btn-outline-dark.social-btn:hover {
+    background-color: #212529;
+    border-color: #212529;
+    color: white;
+}
+
+/* Social media section styling */
+.social-login-section {
+    margin: 1.5rem 0;
+}
+
+.social-divider {
+    position: relative;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.social-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #dee2e6;
+}
+
+.social-divider span {
+    background: white;
+    padding: 0 1rem;
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .social-btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .social-btn i {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for social buttons */
+@keyframes socialPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+    }
+}
+
+.social-btn:focus {
+    animation: socialPulse 1.5s infinite;
+}
+
+/* Custom colors for better brand recognition */
+.btn-google {
+    border-color: #db4437;
+    color: #db4437;
+}
+
+.btn-google:hover {
+    background-color: #db4437;
+    border-color: #db4437;
+    color: white;
+}
+
+.btn-facebook {
+    border-color: #4267B2;
+    color: #4267B2;
+}
+
+.btn-facebook:hover {
+    background-color: #4267B2;
+    border-color: #4267B2;
+    color: white;
+}
+
+.btn-twitter {
+    border-color: #1DA1F2;
+    color: #1DA1F2;
+}
+
+.btn-twitter:hover {
+    background-color: #1DA1F2;
+    border-color: #1DA1F2;
+    color: white;
+}
+
+.btn-github {
+    border-color: #333;
+    color: #333;
+}
+
+.btn-github:hover {
+    background-color: #333;
+    border-color: #333;
+    color: white;
+}
